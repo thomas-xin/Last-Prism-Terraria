@@ -1,0 +1,7 @@
+execute if entity @s[tag=source_0] run tp @s ~ ~ ~ facing entity @e[tag=target_0,limit=1]
+execute if entity @s[tag=source_1] run tp @s ~ ~ ~ facing entity @e[tag=target_1,limit=1]
+execute if entity @s[tag=source_2] run tp @s ~ ~ ~ facing entity @e[tag=target_2,limit=1]
+execute if entity @s[tag=source_3] run tp @s ~ ~ ~ facing entity @e[tag=target_3,limit=1]
+execute if entity @s[tag=source_4] run tp @s ~ ~ ~ facing entity @e[tag=target_4,limit=1]
+execute if entity @s[tag=source_5] run tp @s ~ ~ ~ facing entity @e[tag=target_5,limit=1]
+execute if entity @s[tag=source_6] run tp @s ~ ~ ~ facing entity @e[tag=target_6,limit=1]

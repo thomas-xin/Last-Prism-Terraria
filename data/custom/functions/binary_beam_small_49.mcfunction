@@ -1,0 +1,1 @@
+execute positioned ^ ^ ^82.03125 if entity @s[distance=..3] run function custom:damage_entity_small

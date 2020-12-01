@@ -1,0 +1,2 @@
+execute positioned ^ ^ ^9.375 if entity @s[distance=..7.6875] positioned ^ ^ ^-9.375 run function custom:binary_beam_small_34
+execute positioned ^ ^ ^18.75 if entity @s[distance=..7.6875] positioned ^ ^ ^-18.75 run function custom:binary_beam_small_35

@@ -1,0 +1,1 @@
+give @s warped_fungus_on_a_stick{display:{Name:'{"text":"Last Prism","color":"white","bold":true,"italic":false}',Lore:['{"text":"Fire a lifeform disintegration rainbow","color":"gray","bold":false,"italic":true}']},HideFlags:23,Unbreakable:1b,Enchantments:[{id:"minecraft:mending",lvl:1s}]}

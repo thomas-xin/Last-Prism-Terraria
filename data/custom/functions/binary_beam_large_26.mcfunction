@@ -1,0 +1,1 @@
+execute positioned ^ ^ ^98.4375 if entity @s[distance=..5] run function custom:damage_entity_large
