@@ -3,6 +3,7 @@ effect give @s[scores={damaged=3..}] instant_damage 1 1 true
 effect give @s[scores={damaged=7..}] instant_damage 1 2 true
 effect give @s[scores={damaged=15..}] instant_damage 1 3 true
 effect give @s[scores={damaged=31..}] instant_damage 1 4 true
+effect give @s[scores={damaged=63..}] instant_damage 1 5 true
 scoreboard players set @s[scores={leave_game=1..}] player_id -1
 scoreboard players set @s[scores={leave_game=1..}] leave_game 0
 tag @s[tag=assigned] remove assigned
