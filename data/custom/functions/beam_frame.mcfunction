@@ -6,8 +6,8 @@ execute at @e[type=area_effect_cloud,distance=..12,tag=beam_relocate,limit=1] at
 execute at @e[type=area_effect_cloud,distance=..12,tag=beam_relocate,limit=1] at @p positioned ~ ~0.75 ~ run tp @e[type=armor_stand,distance=..12,tag=last_prism,sort=nearest,limit=1] ^ ^ ^2
 execute at @e[type=area_effect_cloud,distance=..12,tag=beam_relocate,limit=1] as @p store result score __check__ var1 run data get entity @s XpTotal
 execute if score __check__ var1 = __zero__ var0 run tag @s add dead
-execute if entity @s[tag=!dead,tag=!charged] at @e[type=area_effect_cloud,distance=..12,tag=beam_relocate,limit=1] as @p run xp add @s -1
-execute if entity @s[tag=!dead,tag=charged] at @e[type=area_effect_cloud,distance=..12,tag=beam_relocate,limit=1] as @p run xp add @s -3
+execute if entity @s[tag=!dead,tag=!charged] at @e[type=area_effect_cloud,distance=..12,tag=beam_relocate,limit=1] as @p[gamemode=!creative] run xp add @s -1
+execute if entity @s[tag=!dead,tag=charged] at @e[type=area_effect_cloud,distance=..12,tag=beam_relocate,limit=1] as @p[gamemode=!creative] run xp add @s -3
 execute if entity @s[tag=!dead] if entity @e[type=area_effect_cloud,distance=..12,tag=beam_relocate,limit=1] run scoreboard players set __check__ var0 -1
 kill @e[tag=beam_relocate]
 execute if score __check__ var0 = @s player_id run tag @s add dead
