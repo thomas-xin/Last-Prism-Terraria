@@ -1,1 +1,1 @@
-scoreboard players add @s damaged 2
+scoreboard players add @s damaged 3
