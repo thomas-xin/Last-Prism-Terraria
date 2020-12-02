@@ -5,9 +5,11 @@ scoreboard objectives add player_id dummy
 scoreboard objectives add weapon_used minecraft.used:minecraft.warped_fungus_on_a_stick
 scoreboard objectives add weapon_delay dummy
 scoreboard objectives add leave_game minecraft.custom:minecraft.leave_game
+scoreboard objectives add deaths deathCount
 scoreboard objectives add damaged dummy
 scoreboard objectives add XP xp
 scoreboard players set __zero__ var0 0
+scoreboard players set __one__ var0 1
 
 execute as @e[tag=last_prism] at @s unless entity @e[tag=last_prism_beam,distance=..2,limit=1] run kill @s
 execute as @e[tag=last_prism_beam] at @s run function custom:beam_frame

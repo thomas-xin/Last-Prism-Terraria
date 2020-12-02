@@ -5,7 +5,11 @@ effect give @s[scores={damaged=15..}] instant_damage 1 3 true
 effect give @s[scores={damaged=31..}] instant_damage 1 4 true
 effect give @s[scores={damaged=63..}] instant_damage 1 5 true
 scoreboard players set @s[scores={leave_game=1..}] player_id -1
-scoreboard players set @s[scores={leave_game=1..}] leave_game 0
+scoreboard players set @s[scores={deaths=1..}] player_id -1
+scoreboard players reset @s[scores={leave_game=1..}] damaged
+scoreboard players reset @s[scores={deaths=1..}] damaged
+scoreboard players reset @s[scores={leave_game=1..}] leave_game
+scoreboard players reset @s[scores={deaths=1..}] leave_game
 tag @s[tag=assigned] remove assigned
 tag @s[scores={player_id=1..}] add assigned
 scoreboard players set @s[tag=!assigned] player_id -1
