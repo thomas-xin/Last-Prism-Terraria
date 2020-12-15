@@ -93,6 +93,7 @@ for x in range(2):
             j = i + 6 if i else 0
         else:
             j = i
+        s += "execute if score __destroy__ var0 > __zero__ var0 run tag @s add destroy\n"
         s += f"execute if entity @s[tag=source_{i}] run function custom:beam_{j}\n"
     div = 32 if x == 0 else 16
     for i in range(div):
@@ -133,13 +134,10 @@ particles = [
     "execute if entity @p[distance=..32] run particle dust 1. .75 1. 1 ~ ~ ~ 0 0 0 0 1 force",
 ]
 s = """
-execute if block ~ ~ ~ #climbable run setblock ~ ~ ~ air destroy
-execute if block ~ ~ ~ #flowers run setblock ~ ~ ~ air destroy
-execute if block ~ ~ ~ #bee_growables run setblock ~ ~ ~ air destroy
-execute if block ~ ~ ~ tall_grass run setblock ~ ~ ~ air destroy
-execute if block ~ ~ ~ grass run setblock ~ ~ ~ air destroy
+execute unless entity @s[tag=destroy] run function custom:break_nonsolid
 scoreboard players remove @s var0 1
 execute unless block ~ ~ ~ air unless block ~ ~ ~ water unless block ~ ~ ~ lava unless block ~ ~ ~ #impermeable unless block ~ ~ ~ cave_air run scoreboard players set @s var0 0
+execute if entity @s[tag=destroy] unless block ~ ~ ~ #wither_immune run function custom:silk_block
 execute if entity @s[scores={var0=0}] run tp @s ~ ~ ~
 execute unless entity @s[scores={var0=0}] positioned ^ ^ ^.5 run function custom:beam_
 """[1:-1]

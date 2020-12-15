@@ -1,9 +1,16 @@
+execute if score __destroy__ var0 > __zero__ var0 run tag @s add destroy
 execute if entity @s[tag=source_0] run function custom:beam_0
+execute if score __destroy__ var0 > __zero__ var0 run tag @s add destroy
 execute if entity @s[tag=source_1] run function custom:beam_1
+execute if score __destroy__ var0 > __zero__ var0 run tag @s add destroy
 execute if entity @s[tag=source_2] run function custom:beam_2
+execute if score __destroy__ var0 > __zero__ var0 run tag @s add destroy
 execute if entity @s[tag=source_3] run function custom:beam_3
+execute if score __destroy__ var0 > __zero__ var0 run tag @s add destroy
 execute if entity @s[tag=source_4] run function custom:beam_4
+execute if score __destroy__ var0 > __zero__ var0 run tag @s add destroy
 execute if entity @s[tag=source_5] run function custom:beam_5
+execute if score __destroy__ var0 > __zero__ var0 run tag @s add destroy
 execute if entity @s[tag=source_6] run function custom:beam_6
 execute if entity @s[distance=0.0..4.6875] positioned ~ ~-1 ~ positioned ^ ^ ^2.34375 as @e[tag=!nohit,distance=..7.34375] positioned ^ ^ ^-2.34375 run function custom:binary_beam_small_32
 execute if entity @s[distance=4.6875..9.375] positioned ~ ~-1 ~ positioned ^ ^ ^4.6875 as @e[tag=!nohit,distance=..9.6875] positioned ^ ^ ^-4.6875 run function custom:binary_beam_small_16
