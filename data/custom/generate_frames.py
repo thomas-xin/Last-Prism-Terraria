@@ -137,7 +137,7 @@ s = """
 execute unless entity @s[tag=destroy] run function custom:break_nonsolid
 scoreboard players remove @s var0 1
 execute unless block ~ ~ ~ air unless block ~ ~ ~ water unless block ~ ~ ~ lava unless block ~ ~ ~ #impermeable unless block ~ ~ ~ cave_air run scoreboard players set @s var0 0
-execute if entity @s[tag=destroy] unless block ~ ~ ~ #wither_immune run function custom:silk_block
+execute if entity @s[tag=destroy] unless block ~ ~ ~ #wither_immune run function custom:silk_explode
 execute if entity @s[scores={var0=0}] run tp @s ~ ~ ~
 execute unless entity @s[scores={var0=0}] positioned ^ ^ ^.5 run function custom:beam_
 """[1:-1]
@@ -152,15 +152,16 @@ s = """
 execute store result score __check__ var0 run scoreboard players get @s player_id
 tag @e[tag=nohit] remove nohit
 execute as @e if score @s player_id = __check__ var0 run tag @s add nohit
-execute as @a[distance=..12,scores={weapon_delay=1..}] if score @s player_id = __check__ var0 at @s run summon area_effect_cloud ~ ~ ~ {Radius:0,Duration:1,Tags:["beam_relocate"]}
-execute at @e[type=area_effect_cloud,distance=..12,tag=beam_relocate,limit=1] at @p positioned ~ ~1.6 ~ run tp @s ^ ^ ^.75 ~ ~
-execute at @e[type=area_effect_cloud,distance=..12,tag=beam_relocate,limit=1] at @p positioned ~ ~0.75 ~ run tp @e[type=armor_stand,distance=..12,tag=last_prism,sort=nearest,limit=1] ^ ^ ^1.25
-execute at @e[type=area_effect_cloud,distance=..12,tag=beam_relocate,limit=1] as @p store result score __check__ var1 run data get entity @s XpTotal
+execute as @a[distance=..12,scores={weapon_delay=1..}] if score @s player_id = __check__ var0 at @s run summon area_effect_cloud ~ ~ ~ {Radius:0,Duration:1,UUID:[I;294966924,-1697559438,-1477428525,1865431646]}
+execute as 1194d68c-9ad1-4c72-a7f0-3ad36f303a5e at @p run tp @s ~ ~ ~ ~ ~
+execute at 1194d68c-9ad1-4c72-a7f0-3ad36f303a5e positioned ~ ~1.6 ~ run tp @s ^ ^ ^.75 ~ ~
+execute at 1194d68c-9ad1-4c72-a7f0-3ad36f303a5e positioned ~ ~0.75 ~ run tp @e[type=armor_stand,distance=..12,tag=last_prism,sort=nearest,limit=1] ^ ^ ^1.25
+execute at 1194d68c-9ad1-4c72-a7f0-3ad36f303a5e as @p store result score __check__ var1 run data get entity @s XpTotal
 execute if score __check__ var1 = __zero__ var0 run tag @s add dead
-execute if entity @s[tag=!dead,tag=!charged] at @e[type=area_effect_cloud,distance=..12,tag=beam_relocate,limit=1] as @p[gamemode=!creative] run xp add @s -1
-execute if entity @s[tag=!dead,tag=charged] at @e[type=area_effect_cloud,distance=..12,tag=beam_relocate,limit=1] as @p[gamemode=!creative] run xp add @s -3
-execute if entity @s[tag=!dead] if entity @e[type=area_effect_cloud,distance=..12,tag=beam_relocate,limit=1] run scoreboard players set __check__ var0 -1
-kill @e[tag=beam_relocate]
+execute if entity @s[tag=!dead,tag=!charged] at 1194d68c-9ad1-4c72-a7f0-3ad36f303a5e as @p[gamemode=!creative] run xp add @s -1
+execute if entity @s[tag=!dead,tag=charged] at 1194d68c-9ad1-4c72-a7f0-3ad36f303a5e as @p[gamemode=!creative] run xp add @s -3
+execute if entity @s[tag=!dead] if entity 1194d68c-9ad1-4c72-a7f0-3ad36f303a5e run scoreboard players set __check__ var0 -1
+kill 1194d68c-9ad1-4c72-a7f0-3ad36f303a5e
 execute if score __check__ var0 = @s player_id run tag @s add dead
 scoreboard players add @s[tag=!charged] var0 1
 scoreboard players add @s[tag=charged] var1 1

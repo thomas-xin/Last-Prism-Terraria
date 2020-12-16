@@ -1,5 +1,12 @@
 execute if block ~ ~ ~ stone run summon item ~ ~ ~ {Item:{id:stone,Count:1},Health:80}
+execute if block ~ ~ ~ stone if score __block_break__ var0 >= __zero__ var0 run playsound minecraft:block.stone.break block @a
+execute if block ~ ~ ~ netherrack run scoreboard players remove __block_break__ var0 1
 execute if block ~ ~ ~ stone run setblock ~ ~ ~ air
+
+execute if block ~ ~ ~ netherrack run summon item ~ ~ ~ {Item:{id:netherrack,Count:1},Health:80}
+execute if block ~ ~ ~ netherrack if score __block_break__ var0 >= __zero__ var0 run playsound minecraft:block.netherrack.break block @a
+execute if block ~ ~ ~ netherrack run scoreboard players remove __block_break__ var0 1
+execute if block ~ ~ ~ netherrack run setblock ~ ~ ~ air
 
 execute if block ~ ~ ~ glass run summon item ~ ~ ~ {Item:{id:glass,Count:1},Health:80}
 execute if block ~ ~ ~ white_stained_glass run summon item ~ ~ ~ {Item:{id:white_stained_glass,Count:1},Health:80}

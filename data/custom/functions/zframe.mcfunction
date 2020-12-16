@@ -10,6 +10,7 @@ scoreboard objectives add damaged dummy
 scoreboard objectives add XP xp
 scoreboard players set __zero__ var0 0
 scoreboard players set __one__ var0 1
+scoreboard players set __block_break__ var0 4
 
 execute as @e[tag=last_prism] at @s unless entity @e[tag=last_prism_beam,distance=..2,limit=1] run kill @s
 execute as @e[tag=last_prism_beam] at @s run function custom:beam_frame
@@ -18,7 +19,7 @@ execute as @a at @s run function custom:player_entity
 scoreboard players set __player__ var0 0
 function custom:player_id
 
-execute as @a[nbt={SelectedItem:{id:"minecraft:warped_fungus_on_a_stick",Count:1b,tag:{HideFlags:23}}}] run function custom:last_prism_held
+execute as @a[nbt={SelectedItem:{id:"minecraft:warped_fungus_on_a_stick",Count:1b,tag:{HideFlags:23}}}] at @s run function custom:last_prism_held
 
 execute as @e at @s run function custom:entity_entity
 
